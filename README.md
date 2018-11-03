@@ -3,7 +3,7 @@ This is a example of EC-DH, which do DH base on Ecdsa and AES gcm mode to encryp
 
 
 
-There are tow examples in dir example, please check for detail.
+There are tow examples in dir [example](https://github.com/czminami/ecdh/blob/master/example/ecdh_example.go), please check for detail.
 
 The first example Simplex, just similar to HTTPS between browser and server;
 
