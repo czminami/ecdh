@@ -11,6 +11,7 @@ import (
 	"io"
 	"math/big"
 
+	"github.com/czminami/m41pg/crypto"
 	"golang.org/x/crypto/hkdf"
 	"golang.org/x/crypto/sha3"
 )
@@ -104,7 +105,7 @@ func Encrypt(x, y, k []byte, messge []byte) ([]byte, error) {
 		return nil, err
 	}
 
-	raw, err := AecEncrypt([][]byte{key}, messge)
+	raw, err := crypto.AecEncrypt([][]byte{key}, messge)
 	if err != nil {
 		return nil, err
 	}
@@ -120,7 +121,7 @@ func Decrypt(x, y, k []byte, encrypted []byte) ([]byte, error) {
 		return nil, err
 	}
 
-	raw, err := AesDecrypt([][]byte{key}, encrypted)
+	raw, err := crypto.AesDecrypt([][]byte{key}, encrypted)
 	if err != nil {
 		return nil, err
 	}
